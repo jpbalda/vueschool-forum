@@ -20,7 +20,6 @@
     <PostList :posts="posts" />
     <PostEditor
       :thread-id="id"
-      @save="addPost"
     />
   </div>
 </template>
@@ -53,15 +52,6 @@ export default {
         .filter(post =>
           postIds.includes(post['.key'])
         )
-    }
-  },
-  methods: {
-    addPost ({ post }) {
-      const postId = post['.key']
-
-      this.$set(this.$store.state.posts, postId, post)
-      this.$set(this.thread.posts, postId, postId)
-      this.$set(this.$store.state.users[post.userId].posts, postId, postId)
     }
   }
 }
