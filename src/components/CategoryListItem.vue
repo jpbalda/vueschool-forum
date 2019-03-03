@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import sourceData from '@/data'
 import ForumList from './ForumList'
 
 export default {
@@ -28,7 +27,7 @@ export default {
   computed: {
     categoryForums () {
       return Object
-        .values(sourceData.forums)
+        .values(this.$store.state.forums)
         .filter(forum => forum.categoryId === this.category['.key'])
     }
   }

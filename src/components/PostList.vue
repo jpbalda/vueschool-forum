@@ -1,11 +1,15 @@
 <template>
   <div class="post-list">
-    <PostListItem v-for="post in posts" :post="post" :key="post['.key']"/>
+    <PostListItem
+      v-for="post in posts"
+      :key="post['.key']"
+      :post="post"
+    />
   </div>
 </template>
 
 <script>
-import PostListItem from "@/components/PostListItem";
+import PostListItem from '@/components/PostListItem'
 
 export default {
   components: {
@@ -17,5 +21,5 @@ export default {
       type: Array
     }
   }
-};
+}
 </script>
