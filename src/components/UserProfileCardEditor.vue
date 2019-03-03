@@ -90,7 +90,10 @@
       </div>
 
       <div class="btn-group space-between">
-        <button class="btn-ghost">
+        <button
+          class="btn-ghost"
+          @click.prevent="cancel"
+        >
           Cancel
         </button>
         <button
@@ -133,6 +136,10 @@ export default {
   methods: {
     save () {
       this.$store.dispatch('updateUser', { ...this.activeUser })
+      this.$router.push({ name: 'Profile' })
+    },
+    cancel () {
+      this.$router.push({ name: 'Profile' })
     }
   }
 }
