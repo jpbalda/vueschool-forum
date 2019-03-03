@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/Home'
+import ForumShow from '@/views/ForumShow'
 import ThreadShow from '@/views/ThreadShow'
 import NotFound from '@/views/NotFound'
 
@@ -14,6 +15,12 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/forum/:id',
+      name: 'ForumShow',
+      component: ForumShow,
+      props: true
     },
     {
       path: '/thread/:id',
