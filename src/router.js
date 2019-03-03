@@ -4,6 +4,7 @@ import Home from '@/views/Home'
 import CategoryShow from '@/views/CategoryShow'
 import ForumShow from '@/views/ForumShow'
 import ThreadShow from '@/views/ThreadShow'
+import Profile from '@/views/Profile'
 import NotFound from '@/views/NotFound'
 
 Vue.use(Router)
@@ -34,6 +35,11 @@ export default new Router({
       name: 'ThreadShow',
       component: ThreadShow,
       props: true
+    },
+    {
+      path: '/me',
+      name: 'Profile',
+      component: Profile
     },
     {
       path: '*',
