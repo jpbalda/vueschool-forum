@@ -2,17 +2,21 @@
   <div class="thread">
     <div>
       <p>
-        <router-link :to="{name: 'ThreadShow', params: {id: thread['.key']}}">{{ thread.title }}</router-link>
+        <router-link :to="{name: 'ThreadShow', params: {id: thread['.key']}}">
+          {{ thread.title }}
+        </router-link>
       </p>
       <p class="text-faded text-xsmall">
         By
         <a href="#">{{ user.name }}</a>
-        , {{ thread.publishedAt }}.
+        , <AppDate :timestamp="thread.publishedAt" />.
       </p>
     </div>
 
     <div class="activity">
-      <p class="replies-count">{{ repliesCount }} replies</p>
+      <p class="replies-count">
+        {{ repliesCount }} replies
+      </p>
 
       <!-- <img
         class="avatar-medium"
@@ -30,9 +34,13 @@
 </template>
 
 <script>
-import sourceData from "@/data";
+import sourceData from '@/data'
+import AppDate from './AppDate'
 
 export default {
+  components: {
+    AppDate
+  },
   props: {
     thread: {
       required: true,
@@ -40,13 +48,13 @@ export default {
     }
   },
   computed: {
-    repliesCount() {
-      return Object.keys(this.thread.posts).length - 1;
+    repliesCount () {
+      return Object.keys(this.thread.posts).length - 1
     },
-    user() {
-      return sourceData.users[this.thread.userId];
+    user () {
+      return sourceData.users[this.thread.userId]
     }
   }
-};
+}
 </script>
 
