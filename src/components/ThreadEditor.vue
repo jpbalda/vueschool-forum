@@ -35,7 +35,7 @@
         type="submit"
         name="Publish"
       >
-        Publish
+        {{ isUpdate ? 'Update' : 'Publish' }}
       </button>
     </div>
   </form>
@@ -59,6 +59,11 @@ export default {
         title: this.title,
         text: this.text
       }
+    }
+  },
+  computed: {
+    isUpdate () {
+      return !!this.title
     }
   },
   methods: {
