@@ -22,9 +22,20 @@
     </div>
 
     <div class="post-content">
-      <div v-if="!editing">
-        {{ post.text }}
-      </div>
+      <template v-if="!editing">
+        <div>
+          {{ post.text }}
+        </div>
+        <a
+          href="#"
+          style="margin-left: auto;"
+          class="link-unstyled"
+          title="Make a change"
+          @click.prevent="editing = true"
+        >
+          <i class="fa fa-pencil" />
+        </a>
+      </template>
       <div
         v-else
         style="width: 100%"
