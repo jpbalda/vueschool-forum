@@ -8,10 +8,12 @@
             {{ forum.description }}
           </p>
         </div>
-        <a
-          href="new-thread.html"
+        <router-link
+          :to="{name: 'ThreadCreate', params: {forum}}"
           class="btn-green btn-small"
-        >Start a thread</a>
+        >
+          Start a thread
+        </router-link>
       </div>
     </div>
 

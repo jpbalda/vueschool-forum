@@ -27,7 +27,7 @@ export default new Vuex.Store({
     },
     createThread ({ commit, state, dispatch }, { title, text, forumId }) {
       const threadId = 'greatThread' + Math.random()
-      const userId = state.userId
+      const userId = state.authId
       const publishedAt = Math.floor(Date.now() / 1000)
 
       const thread = {

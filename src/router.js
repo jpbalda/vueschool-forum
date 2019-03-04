@@ -4,6 +4,7 @@ import Home from '@/views/Home'
 import CategoryShow from '@/views/CategoryShow'
 import ForumShow from '@/views/ForumShow'
 import ThreadShow from '@/views/ThreadShow'
+import ThreadCreate from '@/views/ThreadCreate'
 import Profile from '@/views/Profile'
 import NotFound from '@/views/NotFound'
 
@@ -28,6 +29,12 @@ export default new Router({
       path: '/forum/:id',
       name: 'ForumShow',
       component: ForumShow,
+      props: true
+    },
+    {
+      path: '/thread/create',
+      name: 'ThreadCreate',
+      component: ThreadCreate,
       props: true
     },
     {
