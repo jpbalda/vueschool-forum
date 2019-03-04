@@ -9,7 +9,7 @@
           </p>
         </div>
         <router-link
-          :to="{name: 'ThreadCreate', params: {forum}}"
+          :to="{name: 'ThreadCreate', params: {forumId: forum['.key']}}"
           class="btn-green btn-small"
         >
           Start a thread
