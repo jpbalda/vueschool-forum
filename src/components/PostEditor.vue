@@ -11,8 +11,15 @@
       />
     </div>
     <div class="form-actions">
+      <button
+        v-if="isUpdate"
+        class="btn btn-ghost"
+        @click.prevent="cancel"
+      >
+        Cancel
+      </button>
       <button class="btn-blue">
-        Submit post
+        {{ isUpdate ? 'Update' : 'Submit post' }}
       </button>
     </div>
   </form>
@@ -46,6 +53,9 @@ export default {
         .then(post => {
           this.$emit('save', { post })
         })
+    },
+    cancel () {
+      this.$emit('cancel')
     },
     create () {
       const post = {
