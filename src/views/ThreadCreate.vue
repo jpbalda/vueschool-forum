@@ -27,7 +27,10 @@
       </div>
 
       <div class="btn-group">
-        <button class="btn btn-ghost">
+        <button
+          class="btn btn-ghost"
+          @click.prevent="cancel"
+        >
           Cancel
         </button>
         <button
@@ -62,7 +65,12 @@ export default {
         forumId: this.forum['.key'],
         title: this.title,
         text: this.text
+      }).then(thread => {
+        this.$router.push({ name: 'ThreadShow', params: { id: thread['.key'] } })
       })
+    },
+    cancel () {
+      this.$router.push({ name: 'ForumShow', params: { id: this.forum['.key'] } })
     }
   }
 }
