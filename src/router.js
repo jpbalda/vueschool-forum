@@ -5,6 +5,7 @@ import CategoryShow from '@/views/CategoryShow'
 import ForumShow from '@/views/ForumShow'
 import ThreadShow from '@/views/ThreadShow'
 import ThreadCreate from '@/views/ThreadCreate'
+import ThreadEdit from '@/views/ThreadEdit'
 import Profile from '@/views/Profile'
 import NotFound from '@/views/NotFound'
 
@@ -41,6 +42,12 @@ export default new Router({
       path: '/thread/:id',
       name: 'ThreadShow',
       component: ThreadShow,
+      props: true
+    },
+    {
+      path: '/thread/:id/edit',
+      name: 'ThreadEdit',
+      component: ThreadEdit,
       props: true
     },
     {
